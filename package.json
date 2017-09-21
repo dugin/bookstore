@@ -1,5 +1,6 @@
 {
   "name": "bookstore",
+  "homepage": "https://dugin.github.io/bookstore/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
