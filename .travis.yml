@@ -11,6 +11,11 @@ cache:
   directories:
     - "node_modules"
 
+before_install:
+  - git config credential.helper "store --file=.git/credentials"; echo "https://${GITHUB_TOKEN}:@github.com" > .git/credentials 2>/dev/null
+  - git config --global user.email "rodrigodugin@gmail.com"
+  - git config --global user.name "Rodrigo Dugin"
+
 before_script:
   - npm install -g create-react-app
 
@@ -24,7 +29,7 @@ after_success:
 deploy:
  provider: pages
  skip_cleanup: true
- github_token: GITHUB_TOKEN 
+ github_token: GITHUB_TOKEN
  local_dir: build
  on:
    branch: master
