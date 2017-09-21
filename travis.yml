@@ -18,11 +18,5 @@ script:
   - npm install
   - npm run test:CI
 
-after:success:
+after_success:
   - npm run deploy
-  deploy:
-    provider: pages
-    skip_cleanup: true
-    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
-    on:
-      branch: master
