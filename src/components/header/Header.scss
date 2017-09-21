@@ -1,0 +1,33 @@
+@import '../../variables';
+
+.Header {
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  min-height: 65px;
+  box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
+  background-color: $color__primary;
+
+  &__title {
+    color: $color__text--white;
+
+    &:hover{
+      color: $color__text--white;
+    }
+  }
+
+  &__links {
+    position: absolute;
+    right: 10px;
+
+    &__icon {
+      font-size: 32px;
+      color: $color__text--white;
+
+      &:hover{
+        cursor: pointer;
+      }
+
+    }
+  }
+}

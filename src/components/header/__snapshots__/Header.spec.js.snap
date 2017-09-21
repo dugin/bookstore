@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders properly 1`] = `
+<Navbar
+  color="faded"
+  light={true}
+  tag="nav"
+  toggleable={true}
+>
+  <NavbarBrand
+    href="/"
+    tag="a"
+  >
+    Bookstore
+  </NavbarBrand>
+  <Nav
+    className="ml-auto"
+    navbar={true}
+    tag="ul"
+  >
+    <NavItem
+      tag="li"
+    >
+      <NavLink
+        tag="a"
+      >
+        <i
+          class="material-icons"
+        >
+          shopping_cart
+        </i>
+      </NavLink>
+    </NavItem>
+  </Nav>
+</Navbar>
+`;
