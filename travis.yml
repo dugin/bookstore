@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+- stable
+cache:
+  directories:
+    - "node_modules"
+before_script:
+  - npm install -g create-react-app
+script:
+  - npm install
+  - npm run test:CI
+
+after:success:
+  - npm run deploy
+  deploy:
+    provider: pages
+    skip_cleanup: true
+    github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+    on:
+      branch: master
