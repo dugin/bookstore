@@ -1,11 +1,18 @@
 language: node_js
 node_js:
 - stable
+
+branches:
+  only:
+  - gh-pages
+
 cache:
   directories:
     - "node_modules"
+
 before_script:
   - npm install -g create-react-app
+
 script:
   - npm install
   - npm run test:CI
