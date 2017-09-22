@@ -1,17 +1,26 @@
 .Header {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  min-height: 65px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
   background-color: #3fc35f; }
-  .Header__title {
+  .Header__back-arrow {
+    position: absolute;
+    left: 0;
+    font-size: 60px;
     color: #fff; }
+  .Header__block {
+    display: flex;
+    align-items: center;
+    height: 65px; }
+  .Header__title {
+    color: #fff;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%); }
     .Header__title:hover {
       color: #fff; }
   .Header__links {
-    position: absolute;
-    right: 10px; }
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1; }
     .Header__links__icon {
       font-size: 32px;
       color: #fff; }

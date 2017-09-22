@@ -1,30 +1,43 @@
 @import '../../variables';
 
 .Header {
-  justify-content: center;
-  display: flex;
-  align-items: center;
-  min-height: 65px;
   box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.15);
-  background-color: $color__primary;
+  background-color: $color--primary;
+
+  &__back-arrow  {
+    position: absolute;
+    left: 0;
+    font-size: 60px;
+    color: $color__text--white;
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    height: 65px;
+  }
 
   &__title {
     color: $color__text--white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 
-    &:hover{
+    &:hover {
       color: $color__text--white;
     }
   }
 
   &__links {
-    position: absolute;
-    right: 10px;
+    display: flex;
+    flex-direction: row-reverse;
+    flex-grow: 1;
 
     &__icon {
       font-size: 32px;
       color: $color__text--white;
 
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
 

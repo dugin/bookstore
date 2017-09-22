@@ -1,36 +1,37 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Header renders properly 1`] = `
-<Navbar
-  color="faded"
-  light={true}
-  tag="nav"
-  toggleable={true}
+<div
+  className="Header"
 >
-  <NavbarBrand
-    href="/"
-    tag="a"
+  <nav
+    className="container Header__block"
   >
-    Bookstore
-  </NavbarBrand>
-  <Nav
-    className="ml-auto"
-    navbar={true}
-    tag="ul"
-  >
-    <NavItem
-      tag="li"
+    <NavbarBrand
+      className="Header__title"
+      href="/"
+      tag="a"
     >
-      <NavLink
-        tag="a"
+      Bookstore
+    </NavbarBrand>
+    <Nav
+      className="Header__links"
+      tag="ul"
+    >
+      <NavItem
+        tag="li"
       >
-        <i
-          class="material-icons"
+        <NavLink
+          tag="a"
         >
-          shopping_cart
-        </i>
-      </NavLink>
-    </NavItem>
-  </Nav>
-</Navbar>
+          <i
+            className="Header__links__icon material-icons"
+          >
+            shopping_cart
+          </i>
+        </NavLink>
+      </NavItem>
+    </Nav>
+  </nav>
+</div>
 `;
