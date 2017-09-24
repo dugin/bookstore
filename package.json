@@ -14,7 +14,8 @@
     "react-scripts": "1.0.13",
     "reactstrap": "^4.8.0",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
+    "redux": "^3.7.2",
+    "lodash":"^4.17.4"
   },
   "devDependencies": {
     "react-test-renderer": "^15.6.1",

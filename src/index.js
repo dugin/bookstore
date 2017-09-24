@@ -8,8 +8,15 @@ import {BrowserRouter} from 'react-router-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import cartReducer from './reducers/cart';
+import {saveState} from "./utils/loadState";
+import throttle from 'lodash/throttle'
 
 const store = createStore(cartReducer);
+
+store.subscribe(throttle(() => {
+    saveState(store.getState())
+}, 1000));
+
 
 ReactDOM.render(
     <Provider store={store}>

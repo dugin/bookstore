@@ -1,5 +1,5 @@
-import * as constants from './constants';
-import * as actions from './cart';
+import * as constants from '../actions/constants';
+import * as actions from '../actions/cart';
 
 it('creates an action to add to the Cart', () => {
     const book = {};

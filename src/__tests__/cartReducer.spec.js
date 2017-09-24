@@ -1,4 +1,4 @@
-import cartReducer from './cart';
+import cartReducer from '../reducers/cart';
 import * as constants from '../actions/constants';
 
 describe('cartReducer', () => {
