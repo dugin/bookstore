@@ -7,6 +7,11 @@ exports[`Book renders properly 1`] = `
   <figure
     className="Book__figureContainer"
   >
+    <div
+      className="Book__figureContainer__discountTag"
+    >
+      12% OFF
+    </div>
     <img
       alt=""
       className="Book__figureContainer__img"
@@ -34,6 +39,21 @@ exports[`Book renders properly 1`] = `
   >
     <NumberFormat
       allowNegative={true}
+      className="Book__valueContainer__discount"
+      decimalPrecision={2}
+      decimalSeparator=","
+      displayType="text"
+      isAllowed={[Function]}
+      onChange={[Function]}
+      onKeyDown={[Function]}
+      onMouseUp={[Function]}
+      prefix="R$"
+      suffix=""
+      type="text"
+      value={5}
+    />
+    <NumberFormat
+      allowNegative={true}
       className="Book__valueContainer__price"
       decimalPrecision={2}
       decimalSeparator=","
@@ -45,7 +65,7 @@ exports[`Book renders properly 1`] = `
       prefix="R$"
       suffix=""
       type="text"
-      value={45}
+      value={40}
     />
   </section>
   <section
@@ -56,18 +76,22 @@ exports[`Book renders properly 1`] = `
     >
       <button
         className="Book__actions__quantityContainer__minus"
+        onClick={[Function]}
       >
-         - 
+         -
       </button>
       <span
         className="Book__actions__quantityContainer__quantity"
       >
-         1 
+         
+        1
+         
       </span>
       <button
         className="Book__actions__quantityContainer__plus "
+        onClick={[Function]}
       >
-         + 
+         +
       </button>
     </div>
     <button
