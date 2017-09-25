@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer  renders properly 1`] = `
+<div
+  style={
+    Object {
+      "marginTop": "20px",
+      "textAlign": "center",
+    }
+  }
+>
+  <p>
+    Developed by Rodrigo Dugin
+  </p>
+</div>
+`;

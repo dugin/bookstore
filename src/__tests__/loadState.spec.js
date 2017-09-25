@@ -1,6 +1,6 @@
 import {loadState, saveState} from '../utils/loadState';
 
-require("../mocks/localStorageMock.js");
+require("../__mocks__/localStorageMock.js");
 
 
 describe('Local Storage', () => {
@@ -22,6 +22,6 @@ describe('Local Storage', () => {
         saveState(cart);
 
         expect(loadState()).toEqual({});
-    });
+    })
 
 });

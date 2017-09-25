@@ -1,3 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Books Display renders properly 1`] = `<div />`;
+exports[`Books Display renders properly 1`] = `
+<div
+  className="BooksDisplay container px-0 mt-3"
+>
+  <div
+    className="row no-gutters"
+  />
+</div>
+`;

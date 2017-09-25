@@ -1,0 +1,55 @@
+.Book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 370px;
+  border: 1px solid #d1d1d1;
+  margin-top: -1px; }
+  .Book:hover {
+    box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.15); }
+  .Book__figureContainer {
+    margin-top: 15px;
+    text-align: center;
+    border-bottom: 1px solid #e8e8e8;
+    min-height: 250px; }
+    .Book__figureContainer__img {
+      height: 120px; }
+    .Book__figureContainer__caption__name {
+      margin-top: 10px;
+      font-size: 15px; }
+    .Book__figureContainer__caption__description {
+      font-size: 11px;
+      color: #939393;
+      text-align: justify;
+      font-weight: 300;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      /*! autoprefixer: off */
+      -webkit-box-orient: vertical;
+      /*! autoprefixer: on */
+      -webkit-line-clamp: 4; }
+  .Book__actions {
+    display: flex;
+    margin-top: 15px; }
+    .Book__actions__addToCart {
+      background-color: #c33fa3;
+      border: 1px solid #c33fa3;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 12px; }
+    .Book__actions__quantityContainer {
+      margin-right: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .Book__actions__quantityContainer__quantity {
+        margin: 0 10px; }
+      .Book__actions__quantityContainer__minus, .Book__actions__quantityContainer__plus {
+        font-size: 12px;
+        padding: 4px 10px;
+        background-color: white;
+        border: 1px solid #c33fa3;
+        border-radius: 5px;
+        width: 30px;
+        color: #c33fa3; }

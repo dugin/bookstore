@@ -4,3 +4,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   max-width: 100%;
   overflow-x: hidden; }
+
+button:hover {
+  cursor: pointer; }
+
+button:focus {
+  outline: none; }

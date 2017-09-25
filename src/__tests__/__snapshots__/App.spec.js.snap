@@ -5,5 +5,7 @@ exports[`App renders properly 1`] = `
   className="App"
 >
   <Header />
+  <BooksDisplay />
+  <Footer />
 </div>
 `;
