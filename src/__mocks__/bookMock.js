@@ -10,5 +10,6 @@ export const props = {
         },
         "id": "nggnmAEACAAJ",
     },
+    amount: 2,
     addToCart : jest.fn()
 };

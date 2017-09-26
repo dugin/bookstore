@@ -54,13 +54,13 @@
     margin-top: 15px;
     width: 100%;
     justify-content: space-between; }
-    .Book__actions__addToCart {
+    .Book__actions__addToCart, .Book__alert__container__goToCart--btn {
       background-color: #c33fa3;
       border: 1px solid #c33fa3;
       border-radius: 5px;
       color: #fff;
       font-size: 12px; }
-      .Book__actions__addToCart:hover {
+      .Book__actions__addToCart:hover, .Book__alert__container__goToCart--btn:hover {
         background-color: #9e3183; }
     .Book__actions__quantityContainer {
       margin-right: 10px;
@@ -80,3 +80,34 @@
         .Book__actions__quantityContainer__minus:hover, .Book__actions__quantityContainer__plus:hover {
           border: 1px solid #c33fa3;
           color: #c33fa3; }
+  .Book__alert {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center; }
+    .Book__alert__container {
+      color: #fff;
+      font-size: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center; }
+      .Book__alert__container__icon {
+        font-size: 42px;
+        margin-bottom: 10px; }
+      .Book__alert__container__goToCart--btn {
+        margin-top: 35px;
+        font-size: 14px;
+        width: 100%;
+        padding: 5px 10px; }
+      .Book__alert__container__pickMore--btn {
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: 12px;
+        text-decoration: underline;
+        color: #fff; }

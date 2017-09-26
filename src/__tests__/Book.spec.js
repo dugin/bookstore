@@ -3,8 +3,6 @@ import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
 import {Book, mapStateToProps, mapDispatchToProps} from "../containers/book/Book";
 import {props} from "../__mocks__/bookMock";
-import sinon from 'sinon';
-import {addToCart} from "../actions/cart";
 
 describe('Book', () => {
 
@@ -34,6 +32,14 @@ describe('Book', () => {
         expect(book.find('.Book__actions__quantityContainer__quantity').exists()).toBe(true);
         expect(book.find('.Book__actions__quantityContainer__plus').exists()).toBe(true);
         expect(book.find('.Book__actions__addToCart').text()).toBe('Adicionar ao Carrinho');
+    });
+
+    it('renders overlay page when book added to cart', () => {
+        book.setState({shouldShowSuccessMsg: true});
+        expect(book.find('.Book__alert__container__icon').exists()).toBe(true);
+        expect(book.find('.Book__alert__container__msg').text()).toEqual('Adicionado ao seu Carrinho!');
+        expect(book.find('.Book__alert__container__goToCart--btn').text()).toEqual('Finalizar Compra');
+        expect(book.find('.Book__alert__container__pickMore--btn').text()).toEqual('Escolher mais livros');
     });
 
     describe('Add/Subtract buttons', () => {
@@ -85,14 +91,11 @@ describe('Book', () => {
     });
 
     it('mapStateToProps properly', () => {
-
         expect(mapStateToProps(null, props)).toEqual({book: book.instance().props.book});
     });
 
     it('mapDispatchToProps properly', () => {
-
         expect(JSON.stringify(mapDispatchToProps(jest.fn()))).toEqual(JSON.stringify({addToCart: jest.fn()}))
-
     })
 
 

@@ -1,6 +1,6 @@
 import cartReducer from '../reducers/cart';
 import * as constants from '../actions/constants';
-import * as util from '../utils/reducerUtil';
+import * as util from '../utils/booksUtils';
 
 describe('reducerUtil ', () => {
 

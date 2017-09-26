@@ -19,9 +19,18 @@ describe('Header', () => {
         expect(header.find('i').contains('shopping_cart')).toBe(true);
     });
 
-    it('contains total value and amount of books in the cart', () => {
-        expect(header.find('.Header__links__wrapper__priceContainer__price').exists()).toBe(true);
-        expect(header.find('.Header__links__wrapper__priceContainer__amount').exists()).toBe(true);
+    it('contains total value and amount of books in the cart when not empty', () => {
+        header.setProps({books: [props]});
+
+        const amount = header.find('.Header__links__wrapper__priceContainer__amount');
+        const price = header.find('.Header__links__wrapper__priceContainer__price');
+
+        expect(price.exists()).toBe(true);
+        expect(amount.exists()).toBe(true);
+
+        expect(header.instance().setPrice()).toEqual(90);
+        expect(header.instance().setAmount()).toEqual(2);
+
     });
 
     describe('arrow left icon', () => {
@@ -49,4 +58,4 @@ describe('Header', () => {
     });
 
 
-})
+});

@@ -121,4 +121,47 @@
 
     }
   }
+
+  &__alert {
+    position: absolute;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, .8);
+    text-align: center;
+
+    &__container {
+      color: $color--white;
+      font-size: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+
+      &__icon {
+        font-size: 42px;
+        margin-bottom: 10px;
+      }
+
+      &__goToCart--btn {
+        margin-top: 35px;
+        @extend .Book__actions__addToCart;
+        font-size: 14px;
+        width: 100%;
+        padding: 5px 10px;
+      }
+
+      &__pickMore--btn {
+        margin-top: 10px;
+        background-color: transparent;
+        border: none;
+        font-size: 12px;
+        text-decoration: underline;
+        color: $color--white;
+      }
+
+    }
+  }
 }

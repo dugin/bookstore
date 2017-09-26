@@ -6,4 +6,12 @@ export const increaseBookAmount = (action, books) => {
     return books.map(b => {
         return b.book.id === action.book.id ? {...b, amount: b.amount + action.amount} : b;
     });
+};
+
+export const setBooksAmount =  (books) =>{
+    return books.reduce((acc, b) => acc + b.amount, 0);
+};
+
+export const setPriceSum =  (books) =>{
+    return books.reduce((acc, b) => acc + (b.amount * b.book.price), 0);
 }

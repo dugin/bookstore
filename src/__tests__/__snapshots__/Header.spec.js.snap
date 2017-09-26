@@ -7,54 +7,25 @@ exports[`Header renders properly 1`] = `
   <nav
     className="container px-3 px-sm-0 Header__block"
   >
-    <NavbarBrand
-      className="Header__title"
+    <span
+      className="Header__title navbar-brand"
       href="/"
-      tag="a"
     >
       Bookstore
-    </NavbarBrand>
-    <Nav
+    </span>
+    <div
       className="Header__links"
-      tag="ul"
     >
-      <NavItem
-        tag="li"
+      <a
+        className="Header__links__wrapper"
       >
-        <div
-          className="Header__links__wrapper"
+        <i
+          className="Header__links__wrapper__icon material-icons"
         >
-          <i
-            className="Header__links__wrapper__icon material-icons"
-          >
-            shopping_cart
-          </i>
-          <div
-            className="Header__links__wrapper__priceContainer"
-          >
-            <p
-              className="Header__links__wrapper__priceContainer__amount"
-            >
-               livros
-            </p>
-            <NumberFormat
-              allowNegative={true}
-              className="Header__links__wrapper__priceContainer__price"
-              decimalPrecision={2}
-              decimalSeparator=","
-              displayType="text"
-              isAllowed={[Function]}
-              onChange={[Function]}
-              onKeyDown={[Function]}
-              onMouseUp={[Function]}
-              prefix="R$ "
-              suffix=""
-              type="text"
-            />
-          </div>
-        </div>
-      </NavItem>
-    </Nav>
+          shopping_cart
+        </i>
+      </a>
+    </div>
   </nav>
 </div>
 `;

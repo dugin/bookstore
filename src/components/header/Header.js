@@ -4,16 +4,16 @@ import './Header.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import NumberFormat from 'react-number-format';
+import * as utils from '../../utils/booksUtils';
 
 export class Header extends Component {
 
     setAmount = () => {
-        return this.props.books && this.props.books.reduce((acc, b) => acc + b.amount, 0);
+        return utils.setBooksAmount(this.props.books);
     };
 
     setPrice = () => {
-        return this.props.books && this.props.books.reduce((acc, b) => acc + (b.amount * b.book.price), 0);
-
+        return utils.setPriceSum(this.props.books);
     };
 
     render() {
@@ -23,11 +23,13 @@ export class Header extends Component {
                     <Link to="/"> <i className="material-icons Header__back-arrow">keyboard_arrow_left</i></Link>
                 )}
                 <nav className="container px-3 px-sm-0 Header__block">
-                    <NavbarBrand className="Header__title" href="/">Bookstore</NavbarBrand>
-                    <Nav className="Header__links">
-                        <NavItem>
-                            <div className="Header__links__wrapper">
-                                <i className="Header__links__wrapper__icon material-icons">shopping_cart</i>
+                    <span className="Header__title navbar-brand" href="/">Bookstore</span>
+                    <div className="Header__links">
+
+                        <a className="Header__links__wrapper">
+                            <i className="Header__links__wrapper__icon material-icons">shopping_cart</i>
+
+                            {this.props.books && this.props.books.length > 0 && (
                                 <div className="Header__links__wrapper__priceContainer">
                                     <p className="Header__links__wrapper__priceContainer__amount">
                                         {this.setAmount()} livros</p>
@@ -37,9 +39,11 @@ export class Header extends Component {
                                                   decimalPrecision={2} displayType={'text'} decimalSeparator=','
                                                   prefix={'R$ '}/>
                                 </div>
-                            </div>
-                        </NavItem>
-                    </Nav>
+                            )}
+
+                        </a>
+
+                    </div>
                 </nav>
             </div>
         );

@@ -9,7 +9,13 @@ exports[`Footer  renders properly 1`] = `
     }
   }
 >
-  <p>
+  <p
+    style={
+      Object {
+        "fontSize": "14px",
+      }
+    }
+  >
     Developed by Rodrigo Dugin
   </p>
 </div>

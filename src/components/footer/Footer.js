@@ -7,9 +7,13 @@ const Footer = () => {
         textAlign: 'center',
         marginTop: '20px'
     };
+    const p = {
+        fontSize: '14px',
+    };
+
     return (
         <div style={styles}>
-            <p>Developed by Rodrigo Dugin</p>
+            <p style={p}>Developed by Rodrigo Dugin</p>
         </div>
     );
 }

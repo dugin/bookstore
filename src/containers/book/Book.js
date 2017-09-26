@@ -8,7 +8,7 @@ export class Book extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {quantity: 1};
+        this.state = {quantity: 1, shouldShowSuccessMsg: false};
     }
 
     setPrice = () => {
@@ -20,7 +20,12 @@ export class Book extends Component {
     };
 
     addBookToCart = () => {
-        this.props.addToCart(this.props.book, this.state.quantity)
+        this.props.addToCart(this.props.book, this.state.quantity);
+        this.showSuccessMsg();
+    };
+
+    showSuccessMsg = () => {
+        this.setState({shouldShowSuccessMsg: !this.state.shouldShowSuccessMsg});
     };
 
 
@@ -70,6 +75,20 @@ export class Book extends Component {
                     </button>
                 </section>
 
+                {this.state.shouldShowSuccessMsg && (
+                    <div className="Book__alert">
+                        <div className="Book__alert__container">
+                        <div><i className="material-icons mr-2 Book__alert__container__icon">check_circle</i></div>
+                        <div className="Book__alert__container__msg">Adicionado ao seu Carrinho!</div>
+                            <button className="Book__alert__container__goToCart--btn">
+                                Finalizar Compra
+                            </button>
+                            <button onClick={this.showSuccessMsg} className="Book__alert__container__pickMore--btn">
+                               Escolher mais livros
+                            </button>
+                        </div>
+                    </div>
+                )}
             </div>
         )
     }
