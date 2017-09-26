@@ -1,12 +1,27 @@
 import React, {Component} from 'react';
-import {NavbarBrand, Nav, NavItem, NavLink} from 'reactstrap';
 import './Header.css';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import NumberFormat from 'react-number-format';
 import * as utils from '../../utils/booksUtils';
+import {withRouter} from 'react-router-dom';
 
 export class Header extends Component {
+
+    constructor(props) {
+        super(props);
+
+        this.state = {route: window.location.pathname};
+
+        this.listenToRouteChange();
+    }
+
+    listenToRouteChange() {
+        this.props.history && this.props.history
+            .listen((location) => {
+                this.setState({route: location.pathname})
+            });
+    }
 
     setAmount = () => {
         return utils.setBooksAmount(this.props.books);
@@ -19,14 +34,18 @@ export class Header extends Component {
     render() {
         return (
             <div className="Header">
-                {this.props.route && this.props.route.localeCompare('/') !== 0 && (
-                    <Link to="/"> <i className="material-icons Header__back-arrow">keyboard_arrow_left</i></Link>
-                )}
+
                 <nav className="container px-3 px-sm-0 Header__block">
-                    <span className="Header__title navbar-brand" href="/">Bookstore</span>
+                    {this.state.route && this.state.route.localeCompare('/') !== 0 && (
+                        <a onClick={() => this.props.history.goBack()}>
+                            <i className="material-icons Header__block__back-arrow">keyboard_arrow_left</i>
+                        </a>
+                    )}
+                    <span className="Header__title navbar-brand" href="/">Livraria</span>
                     <div className="Header__links">
 
-                        <a className="Header__links__wrapper">
+                        {this.state.route && this.state.route.localeCompare('/carrinho') !== 0 && (
+                        <Link to="/carrinho" className="Header__links__wrapper">
                             <i className="Header__links__wrapper__icon material-icons">shopping_cart</i>
 
                             {this.props.books && this.props.books.length > 0 && (
@@ -41,7 +60,8 @@ export class Header extends Component {
                                 </div>
                             )}
 
-                        </a>
+                        </Link>
+                        )}
 
                     </div>
                 </nav>
@@ -55,4 +75,4 @@ export const mapStateToProps = (state, props) => {
         books: state.books
     }
 };
-export default connect(mapStateToProps, null)(Header);
+export default connect(mapStateToProps, null)(withRouter(Header));

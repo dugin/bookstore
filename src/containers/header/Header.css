@@ -5,15 +5,20 @@
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.85);
   border-bottom: 1px solid #d1d1d1; }
-  .Header__back-arrow {
-    position: absolute;
-    left: 0;
-    font-size: 60px;
-    color: #3fc35f; }
   .Header__block {
     display: flex;
     align-items: center;
     height: 60px; }
+    .Header__block__back-arrow {
+      position: relative;
+      left: -20px;
+      font-size: 48px;
+      color: #3fc35f; }
+      @media (min-width: 768px) {
+        .Header__block__back-arrow {
+          position: absolute;
+          left: 0;
+          top: 5px; } }
   .Header__title {
     color: #3fc35f;
     position: relative; }
@@ -41,6 +46,7 @@
         .Header__links__wrapper__icon:hover {
           cursor: pointer; }
       .Header__links__wrapper__priceContainer {
+        color: #939393;
         display: flex;
         justify-content: center;
         flex-direction: column;

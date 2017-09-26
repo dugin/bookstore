@@ -1,7 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import {Header, mapStateToProps} from '../components/header/Header';
+import {Header, mapStateToProps} from '../containers/header/Header';
 import {props} from "../__mocks__/bookMock";
 
 describe('Header', () => {
@@ -11,8 +11,8 @@ describe('Header', () => {
         expect(toJson(header)).toMatchSnapshot();
     });
 
-    it('contains the title `Bookstore` ', () => {
-        expect(header.contains('Bookstore')).toBe(true);
+    it('contains the title `Livraria` ', () => {
+        expect(header.contains('Livraria')).toBe(true);
     });
 
     it('contains the cart icon', () => {
@@ -39,13 +39,13 @@ describe('Header', () => {
         }
 
         it('show it when route is not home path', () => {
-            const header = setProps({route: '/teste'});
+           header.setState({route: '/carrinho'});
 
             expect(header.find('i').contains('keyboard_arrow_left')).toBe(true);
         });
 
         it('does not show it when is home path', () => {
-            const header = setProps({route: '/'});
+            header.setState({route: '/'});
 
             expect(header.find('i').contains('keyboard_arrow_left')).toBe(false);
         });

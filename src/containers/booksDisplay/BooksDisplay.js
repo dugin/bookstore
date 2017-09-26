@@ -24,7 +24,7 @@ class BooksDisplay extends Component {
                 <div className="row no-gutters">
                     {this.state.books
                         .map(book => (
-                            <div key={book.id} className="BooksDisplay__bookWrapper col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 ">
+                            <div  key={book.id} className="BooksDisplay__bookWrapper col-12 col-sm-12 col-md-6 col-lg-4  col-xl-3 ">
                                 <Book book={book}/>
                             </div>
                         ))}

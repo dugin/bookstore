@@ -11,20 +11,22 @@ exports[`Header renders properly 1`] = `
       className="Header__title navbar-brand"
       href="/"
     >
-      Bookstore
+      Livraria
     </span>
     <div
       className="Header__links"
     >
-      <a
+      <Link
         className="Header__links__wrapper"
+        replace={false}
+        to="/carrinho"
       >
         <i
           className="Header__links__wrapper__icon material-icons"
         >
           shopping_cart
         </i>
-      </a>
+      </Link>
     </div>
   </nav>
 </div>

@@ -4,8 +4,24 @@ exports[`App renders properly 1`] = `
 <div
   className="App"
 >
-  <Connect(Header) />
-  <BooksDisplay />
+  <Connect(withRouter(Header)) />
+  <Switch>
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/"
+    />
+    <Route
+      component={[Function]}
+      exact={true}
+      path="/carrinho"
+    />
+    <Redirect
+      from="**"
+      push={false}
+      to="/"
+    />
+  </Switch>
   <Footer />
 </div>
 `;

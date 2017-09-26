@@ -9,17 +9,25 @@
   border-bottom: 1px solid $color__lineCard--gray;
 
 
-  &__back-arrow {
-    position: absolute;
-    left: 0;
-    font-size: 60px;
-    color: $color--primary;
-  }
 
   &__block {
     display: flex;
     align-items: center;
     height: 60px;
+
+    &__back-arrow {
+      position: relative;
+      left: -20px;
+      font-size: 48px;
+      color: $color--primary;
+
+      @media   (min-width: $screen-sm-min){
+        position: absolute;
+        left: 0;
+        top:5px;
+      }
+    }
+
   }
 
   &__title {
@@ -63,6 +71,7 @@
       }
 
       &__priceContainer {
+        color: $color__text--gray;
         display: flex;
         justify-content: center;
         flex-direction: column;

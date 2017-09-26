@@ -14,7 +14,7 @@ describe('App', () => {
     });
 
     it('contains a connected `Header` Component', () => {
-        expect(app.find('Connect(Header)').exists()).toBe(true);
+        expect(app.find('Connect(withRouter(Header))').exists()).toBe(true);
     });
 
     it('contains `BooksDisplay`', () => {
