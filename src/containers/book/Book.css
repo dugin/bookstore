@@ -4,9 +4,10 @@
   align-items: center;
   min-height: 370px;
   border: 1px solid #d1d1d1;
-  margin-top: -1px; }
+  margin-top: -1px;
+  background-color: #fff; }
   .Book:hover {
-    box-shadow: 0 2px 32px 0 rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 15px 32px 0 rgba(0, 0, 0, 0.15); }
   .Book__figureContainer {
     margin-top: 15px;
     text-align: center;

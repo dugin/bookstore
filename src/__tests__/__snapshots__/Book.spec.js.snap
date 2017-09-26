@@ -47,10 +47,10 @@ exports[`Book renders properly 1`] = `
       onChange={[Function]}
       onKeyDown={[Function]}
       onMouseUp={[Function]}
-      prefix="R$"
+      prefix="R$ "
       suffix=""
       type="text"
-      value={5}
+      value={45}
     />
     <NumberFormat
       allowNegative={true}
@@ -62,7 +62,7 @@ exports[`Book renders properly 1`] = `
       onChange={[Function]}
       onKeyDown={[Function]}
       onMouseUp={[Function]}
-      prefix="R$"
+      prefix="R$ "
       suffix=""
       type="text"
       value={40}
@@ -96,6 +96,7 @@ exports[`Book renders properly 1`] = `
     </div>
     <button
       className="Book__actions__addToCart"
+      onClick={[Function]}
     >
       Adicionar ao Carrinho
     </button>

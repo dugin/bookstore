@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import './Book.css';
-import NumberFormat from 'react-number-format'
+import NumberFormat from 'react-number-format';
+import {addToCart} from '../../actions/cart';
 
 export class Book extends Component {
     constructor(props) {
@@ -16,6 +17,10 @@ export class Book extends Component {
 
     setDiscountTag = () => {
         return `${Math.ceil((this.props.book.discount / this.props.book.price) * 100)}% OFF`
+    };
+
+    addBookToCart = () => {
+        this.props.addToCart(this.props.book, this.state.quantity)
     };
 
 
@@ -36,11 +41,11 @@ export class Book extends Component {
                 <section className="Book__valueContainer">
                     {this.props.book.discount && (
                         <NumberFormat className="Book__valueContainer__discount" value={this.props.book.price}
-                                      decimalPrecision={2} displayType={'text'} decimalSeparator=',' prefix={'R$'}/>
+                                      decimalPrecision={2} displayType={'text'} decimalSeparator=',' prefix={'R$ '}/>
                     )}
 
                     <NumberFormat className="Book__valueContainer__price" value={this.setPrice()}
-                                  decimalPrecision={2} displayType={'text'} decimalSeparator=',' prefix={'R$'}/>
+                                  decimalPrecision={2} displayType={'text'} decimalSeparator=',' prefix={'R$ '}/>
                 </section>
 
                 <section className="Book__actions">
@@ -60,7 +65,7 @@ export class Book extends Component {
                         </button>
 
                     </div>
-                    <button className="Book__actions__addToCart">
+                    <button onClick={this.addBookToCart} className="Book__actions__addToCart">
                         Adicionar ao Carrinho
                     </button>
                 </section>
@@ -70,10 +75,15 @@ export class Book extends Component {
     }
 }
 
-// const mapStateToProps = () => {
-//     return {
-//         books: state
-//     }
-// }
+export const mapStateToProps = (state, props) => {
+    return {
+        book: props.book
+    }
+};
+export const mapDispatchToProps = (dispatch) => {
+    return {
+        addToCart: (book, amount) => dispatch(addToCart(book, amount)),
+    }
+};
 
-export default Book;
+export default connect(mapStateToProps, mapDispatchToProps)(Book);

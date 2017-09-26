@@ -1,9 +1,10 @@
 import * as constants from './constants';
 
-export const addToCart = (book) => {
+export const addToCart = (book, amount) => {
     return {
         type: constants.ADD_TO_CART,
-        book
+        book,
+        amount
     }
 };
 
@@ -13,3 +14,12 @@ export const removeFromCart = (id) => {
         id
     }
 };
+
+// export const changeAmount = (id, amount) => {
+//     return {
+//         type: constants.REMOVE_FROM_CART,
+//         book,
+//         amount
+//
+//     }
+// };

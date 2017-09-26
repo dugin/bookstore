@@ -5,7 +5,7 @@ exports[`Header renders properly 1`] = `
   className="Header"
 >
   <nav
-    className="container Header__block"
+    className="container px-3 px-sm-0 Header__block"
   >
     <NavbarBrand
       className="Header__title"
@@ -21,15 +21,38 @@ exports[`Header renders properly 1`] = `
       <NavItem
         tag="li"
       >
-        <NavLink
-          tag="a"
+        <div
+          className="Header__links__wrapper"
         >
           <i
-            className="Header__links__icon material-icons"
+            className="Header__links__wrapper__icon material-icons"
           >
             shopping_cart
           </i>
-        </NavLink>
+          <div
+            className="Header__links__wrapper__priceContainer"
+          >
+            <p
+              className="Header__links__wrapper__priceContainer__amount"
+            >
+               livros
+            </p>
+            <NumberFormat
+              allowNegative={true}
+              className="Header__links__wrapper__priceContainer__price"
+              decimalPrecision={2}
+              decimalSeparator=","
+              displayType="text"
+              isAllowed={[Function]}
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              onMouseUp={[Function]}
+              prefix="R$ "
+              suffix=""
+              type="text"
+            />
+          </div>
+        </div>
       </NavItem>
     </Nav>
   </nav>

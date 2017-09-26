@@ -1,21 +1,27 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Header from '../components/header/Header';
+import {Header, mapStateToProps} from '../components/header/Header';
+import {props} from "../__mocks__/bookMock";
 
 describe('Header', () => {
-    const app = shallow(<Header/>);
+    const header = shallow(<Header/>);
 
     it('renders properly', () => {
-        expect(toJson(app)).toMatchSnapshot();
+        expect(toJson(header)).toMatchSnapshot();
     });
 
     it('contains the title `Bookstore` ', () => {
-        expect(app.contains('Bookstore')).toBe(true);
+        expect(header.contains('Bookstore')).toBe(true);
     });
 
     it('contains the cart icon', () => {
-        expect(app.find('i').contains('shopping_cart')).toBe(true);
+        expect(header.find('i').contains('shopping_cart')).toBe(true);
+    });
+
+    it('contains total value and amount of books in the cart', () => {
+        expect(header.find('.Header__links__wrapper__priceContainer__price').exists()).toBe(true);
+        expect(header.find('.Header__links__wrapper__priceContainer__amount').exists()).toBe(true);
     });
 
     describe('arrow left icon', () => {
@@ -24,17 +30,23 @@ describe('Header', () => {
         }
 
         it('show it when route is not home path', () => {
-            const app = setProps({route: '/teste'});
+            const header = setProps({route: '/teste'});
 
-            expect(app.find('i').contains('keyboard_arrow_left')).toBe(true);
+            expect(header.find('i').contains('keyboard_arrow_left')).toBe(true);
         });
 
         it('does not show it when is home path', () => {
-            const app = setProps({route: '/'});
+            const header = setProps({route: '/'});
 
-            expect(app.find('i').contains('keyboard_arrow_left')).toBe(false);
+            expect(header.find('i').contains('keyboard_arrow_left')).toBe(false);
         });
 
     });
+
+    it('mapStateToProps properly', () => {
+
+        expect(mapStateToProps(props, null)).toEqual({book: header.instance().props.book});
+    });
+
 
 })

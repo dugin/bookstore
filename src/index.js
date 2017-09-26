@@ -8,10 +8,13 @@ import {BrowserRouter} from 'react-router-dom';
 import {createStore} from 'redux';
 import {Provider} from 'react-redux';
 import cartReducer from './reducers/cart';
-import {saveState} from "./utils/loadState";
+import {saveState, loadState} from "./utils/loadState";
 import throttle from 'lodash/throttle'
 
-const store = createStore(cartReducer);
+const persistedState = loadState();
+
+const store = createStore(cartReducer, persistedState);
+
 
 store.subscribe(throttle(() => {
     saveState(store.getState())

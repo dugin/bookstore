@@ -2,7 +2,6 @@ import React from 'react';
 import App from '../containers/App';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Header from "../components/header/Header";
 import Footer from "../components/footer/Footer";
 import BooksDisplay from "../containers/booksDisplay/BooksDisplay";
 
@@ -14,8 +13,8 @@ describe('App', () => {
         expect(toJson(app)).toMatchSnapshot();
     });
 
-    it('contains `Header`', () => {
-        expect(shallow(<Header/>).exists()).toBe(true);
+    it('contains a connected `Header` Component', () => {
+        expect(app.find('Connect(Header)').exists()).toBe(true);
     });
 
     it('contains `BooksDisplay`', () => {

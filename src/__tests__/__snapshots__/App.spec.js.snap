@@ -4,7 +4,7 @@ exports[`App renders properly 1`] = `
 <div
   className="App"
 >
-  <Header />
+  <Connect(Header) />
   <BooksDisplay />
   <Footer />
 </div>

@@ -1,8 +1,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import toJson from 'enzyme-to-json';
-import {Book} from "../containers/book/Book";
+import {Book, mapStateToProps, mapDispatchToProps} from "../containers/book/Book";
 import {props} from "../__mocks__/bookMock";
+import sinon from 'sinon';
+import {addToCart} from "../actions/cart";
 
 describe('Book', () => {
 
@@ -68,4 +70,30 @@ describe('Book', () => {
             expect(book.state().quantity).toEqual(2);
         });
     });
+
+
+    it('click on Add to Cart button', () => {
+        book.setState({amount: 1});
+
+        const addToCartBtn = book.find('.Book__actions__addToCart');
+
+        expect(addToCartBtn.length).toEqual(1);
+
+        addToCartBtn.simulate('click');
+
+        expect(book.instance().props.addToCart).toHaveBeenCalled();
+    });
+
+    it('mapStateToProps properly', () => {
+
+        expect(mapStateToProps(null, props)).toEqual({book: book.instance().props.book});
+    });
+
+    it('mapDispatchToProps properly', () => {
+
+        expect(JSON.stringify(mapDispatchToProps(jest.fn()))).toEqual(JSON.stringify({addToCart: jest.fn()}))
+
+    })
+
+
 });

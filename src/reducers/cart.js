@@ -1,15 +1,23 @@
 import * as constants from '../actions/constants';
+import * as util from '../utils/reducerUtil';
 
 const initialState = {
     books: []
 };
 
 const cartReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case constants.ADD_TO_CART:
+
             return {
                 ...state,
-                books: [...state.books, action.book]
+                books: util.isBookOnArray(action, state.books) ?
+                    util.increaseBookAmount(action, state.books) :
+                    [...state.books, {
+                        book: action.book,
+                        amount: action.amount
+                    }]
             };
         case constants.REMOVE_FROM_CART:
             return {
