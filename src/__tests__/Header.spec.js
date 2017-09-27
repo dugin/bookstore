@@ -39,23 +39,27 @@ describe('Header', () => {
         }
 
         it('show it when route is not home path', () => {
-           header.setState({route: '/carrinho'});
+            header.setState({route: '/carrinho'});
 
-            expect(header.find('i').contains('keyboard_arrow_left')).toBe(true);
+            expect(header.find('.Header__block__back-arrow').contains('keyboard_arrow_left')).toBe(true);
         });
 
         it('does not show it when is home path', () => {
             header.setState({route: '/'});
 
-            expect(header.find('i').contains('keyboard_arrow_left')).toBe(false);
+            expect(header.find('.Header__block__back-arrow').contains('keyboard_arrow_left')).toBe(false);
         });
 
+        it('click on it', () => {
+            header.setState({route: '/carrinho'});
+            header.setProps({history: {goBack: jest.fn()}});
+
+            const backBtn = header.find('.Header__block__back-arrow').parent();
+
+            backBtn.simulate('click');
+
+            expect(header.instance().props.history.goBack).toHaveBeenCalled();
+        });
     });
-
-    it('mapStateToProps properly', () => {
-
-        expect(mapStateToProps(props, null)).toEqual({book: header.instance().props.book});
-    });
-
 
 });

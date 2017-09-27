@@ -14,4 +14,5 @@ button:focus {
 
 a:hover {
   cursor: pointer;
+  color: #fff;
   text-decoration: none; }

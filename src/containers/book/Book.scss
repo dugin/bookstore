@@ -103,14 +103,19 @@
       }
 
       &__minus, &__plus {
-        font-size: 12px;
+        display: flex;
+        align-items: center;
         padding: 4px 5px;
         background-color: white;
         border: 1px solid $color__text--gray;
         border-radius: 5px;
         width: 30px;
+        color: $color__text--gray;
 
-        color: $color__text--gray;;
+        .material-icons{
+          font-size: 18px;
+          position: relative;
+        }
 
         &:hover {
           border: 1px solid $color--accent;

@@ -3,6 +3,10 @@ import {connect} from 'react-redux';
 import './Book.css';
 import NumberFormat from 'react-number-format';
 import {addToCart} from '../../actions/cart';
+import QuantityButtons from "../quantityButtons/QuantityButtons";
+import BookInfo from "../../components/bookInfo/BookInfo";
+import {Link} from 'react-router-dom';
+import * as utils from '../../utils/booksUtils'
 
 export class Book extends Component {
     constructor(props) {
@@ -12,7 +16,7 @@ export class Book extends Component {
     }
 
     setPrice = () => {
-        return this.props.book.discount ? this.props.book.price - this.props.book.discount : this.props.book.price;
+        return utils.setPrice(this.props.book.discount, this.props.book.price);
     };
 
     setDiscountTag = () => {
@@ -28,6 +32,9 @@ export class Book extends Component {
         this.setState({shouldShowSuccessMsg: !this.state.shouldShowSuccessMsg});
     };
 
+    onAddOrRemove = (quantity) => {
+        this.setState({quantity});
+    };
 
     render() {
         return (
@@ -36,11 +43,7 @@ export class Book extends Component {
                     {this.props.book.discount && (
                         <div className="Book__figureContainer__discountTag">{this.setDiscountTag()}</div>
                     )}
-                    <img src={this.props.book.imageLinks.thumbnail} className="Book__figureContainer__img" alt=""/>
-                    <figcaption className="Book__figureContainer__caption">
-                        <h5 className="Book__figureContainer__caption__name"> {this.props.book.title}</h5>
-                        <p className="Book__figureContainer__caption__description"> {this.props.book.description}</p>
-                    </figcaption>
+                    <BookInfo {...this.props}/>
                 </figure>
 
                 <section className="Book__valueContainer">
@@ -54,22 +57,9 @@ export class Book extends Component {
                 </section>
 
                 <section className="Book__actions">
-                    <div className="Book__actions__quantityContainer">
-                        <button onClick={() => this.setState(state => {
-                                state.quantity > 1 ? state.quantity-- : 1
-                            }
-                        )} className="Book__actions__quantityContainer__minus"> -
-                        </button>
-
-                        <span className="Book__actions__quantityContainer__quantity"> {this.state.quantity} </span>
-
-                        <button onClick={() => this.setState(state => {
-                                state.quantity++
-                            }
-                        )} className="Book__actions__quantityContainer__plus "> +
-                        </button>
-
-                    </div>
+                    <QuantityButtons
+                        onAddOrRemove={this.onAddOrRemove}
+                    />
                     <button onClick={this.addBookToCart} className="Book__actions__addToCart">
                         Adicionar ao Carrinho
                     </button>
@@ -78,13 +68,13 @@ export class Book extends Component {
                 {this.state.shouldShowSuccessMsg && (
                     <div className="Book__alert">
                         <div className="Book__alert__container">
-                        <div><i className="material-icons mr-2 Book__alert__container__icon">check_circle</i></div>
-                        <div className="Book__alert__container__msg">Adicionado ao seu Carrinho!</div>
-                            <button className="Book__alert__container__goToCart--btn">
+                            <div><i className="material-icons mr-2 Book__alert__container__icon">check_circle</i></div>
+                            <div className="Book__alert__container__msg">Adicionado ao seu Carrinho!</div>
+                            <Link to="/carrinho" className="Book__alert__container__goToCart--btn">
                                 Finalizar Compra
-                            </button>
+                            </Link>
                             <button onClick={this.showSuccessMsg} className="Book__alert__container__pickMore--btn">
-                               Escolher mais livros
+                                Escolher mais livros
                             </button>
                         </div>
                     </div>
@@ -94,15 +84,10 @@ export class Book extends Component {
     }
 }
 
-export const mapStateToProps = (state, props) => {
-    return {
-        book: props.book
-    }
-};
 export const mapDispatchToProps = (dispatch) => {
     return {
         addToCart: (book, amount) => dispatch(addToCart(book, amount)),
     }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Book);
+export default connect((state, props) => ({book: props.book}), mapDispatchToProps)(Book);

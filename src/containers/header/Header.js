@@ -70,9 +70,4 @@ export class Header extends Component {
     }
 }
 
-export const mapStateToProps = (state, props) => {
-    return {
-        books: state.books
-    }
-};
-export default connect(mapStateToProps, null)(withRouter(Header));
+export default connect((state, props) =>({ books: state.books}), null)(withRouter(Header));

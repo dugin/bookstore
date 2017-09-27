@@ -8,10 +8,14 @@ export const increaseBookAmount = (action, books) => {
     });
 };
 
-export const setBooksAmount =  (books) =>{
+export const setBooksAmount = (books) => {
     return books.reduce((acc, b) => acc + b.amount, 0);
 };
 
-export const setPriceSum =  (books) =>{
+export const setPriceSum = (books) => {
     return books.reduce((acc, b) => acc + (b.amount * b.book.price), 0);
-}
+};
+
+export const setPrice = (discount, price) => {
+    return discount ? price - discount : price;
+};

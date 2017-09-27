@@ -1,105 +1,167 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Book renders properly 1`] = `
-<div
-  className="Book container"
+<Book
+  addToCart={[Function]}
+  amount={2}
+  book={
+    Object {
+      "description": "You've experienced the shiny, point-and-click surface of your Linux computer—now dive below and explore its depths with the power of the command line. The Linux Command Line takes you from your very first terminal keystrokes to writing full programs in Bash, the most popular Linux shell. Along the way you'll learn the timeless skills handed down by generations of gray-bearded, mouse-shunning gurus: file navigation, environment configuration, command chaining, pattern matching with regular expressions, and more. In addition to that practical knowledge, author William Shotts reveals the philosophy behind these tools and the rich heritage that your desktop Linux machine has inherited from Unix supercomputers of yore. As you make your way through the book's short, easily-digestible chapters, you'll learn how to: * Create and delete files, directories, and symlinks * Administer your system, including networking, package installation, and process management * Use standard input and output, redirection, and pipelines * Edit files with Vi, the world’s most popular text editor * Write shell scripts to automate common or boring tasks * Slice and dice text files with cut, paste, grep, patch, and sed Once you overcome your initial \\"shell shock,\\" you'll find that the command line is a natural and expressive way to communicate with your computer. Just don't be surprised if your mouse starts to gather dust. A featured resource in the Linux Foundation's \\"Evolution of a SysAdmin\\"",
+      "discount": 5,
+      "id": "nggnmAEACAAJ",
+      "imageLinks": Object {
+        "smallThumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+        "thumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+      },
+      "price": 45,
+      "title": "The Linux Command Line",
+    }
+  }
 >
-  <figure
-    className="Book__figureContainer"
+  <div
+    className="Book container"
   >
-    <div
-      className="Book__figureContainer__discountTag"
+    <figure
+      className="Book__figureContainer"
     >
-      12% OFF
-    </div>
-    <img
-      alt=""
-      className="Book__figureContainer__img"
-      src="http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
-    />
-    <figcaption
-      className="Book__figureContainer__caption"
-    >
-      <h5
-        className="Book__figureContainer__caption__name"
+      <div
+        className="Book__figureContainer__discountTag"
       >
-         
-        The Linux Command Line
-      </h5>
-      <p
-        className="Book__figureContainer__caption__description"
+        12% OFF
+      </div>
+      <BookInfo
+        addToCart={[Function]}
+        amount={2}
+        book={
+          Object {
+            "description": "You've experienced the shiny, point-and-click surface of your Linux computer—now dive below and explore its depths with the power of the command line. The Linux Command Line takes you from your very first terminal keystrokes to writing full programs in Bash, the most popular Linux shell. Along the way you'll learn the timeless skills handed down by generations of gray-bearded, mouse-shunning gurus: file navigation, environment configuration, command chaining, pattern matching with regular expressions, and more. In addition to that practical knowledge, author William Shotts reveals the philosophy behind these tools and the rich heritage that your desktop Linux machine has inherited from Unix supercomputers of yore. As you make your way through the book's short, easily-digestible chapters, you'll learn how to: * Create and delete files, directories, and symlinks * Administer your system, including networking, package installation, and process management * Use standard input and output, redirection, and pipelines * Edit files with Vi, the world’s most popular text editor * Write shell scripts to automate common or boring tasks * Slice and dice text files with cut, paste, grep, patch, and sed Once you overcome your initial \\"shell shock,\\" you'll find that the command line is a natural and expressive way to communicate with your computer. Just don't be surprised if your mouse starts to gather dust. A featured resource in the Linux Foundation's \\"Evolution of a SysAdmin\\"",
+            "discount": 5,
+            "id": "nggnmAEACAAJ",
+            "imageLinks": Object {
+              "smallThumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+              "thumbnail": "http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api",
+            },
+            "price": 45,
+            "title": "The Linux Command Line",
+          }
+        }
       >
-         
-        You've experienced the shiny, point-and-click surface of your Linux computer—now dive below and explore its depths with the power of the command line. The Linux Command Line takes you from your very first terminal keystrokes to writing full programs in Bash, the most popular Linux shell. Along the way you'll learn the timeless skills handed down by generations of gray-bearded, mouse-shunning gurus: file navigation, environment configuration, command chaining, pattern matching with regular expressions, and more. In addition to that practical knowledge, author William Shotts reveals the philosophy behind these tools and the rich heritage that your desktop Linux machine has inherited from Unix supercomputers of yore. As you make your way through the book's short, easily-digestible chapters, you'll learn how to: * Create and delete files, directories, and symlinks * Administer your system, including networking, package installation, and process management * Use standard input and output, redirection, and pipelines * Edit files with Vi, the world’s most popular text editor * Write shell scripts to automate common or boring tasks * Slice and dice text files with cut, paste, grep, patch, and sed Once you overcome your initial "shell shock," you'll find that the command line is a natural and expressive way to communicate with your computer. Just don't be surprised if your mouse starts to gather dust. A featured resource in the Linux Foundation's "Evolution of a SysAdmin"
-      </p>
-    </figcaption>
-  </figure>
-  <section
-    className="Book__valueContainer"
-  >
-    <NumberFormat
-      allowNegative={true}
-      className="Book__valueContainer__discount"
-      decimalPrecision={2}
-      decimalSeparator=","
-      displayType="text"
-      isAllowed={[Function]}
-      onChange={[Function]}
-      onKeyDown={[Function]}
-      onMouseUp={[Function]}
-      prefix="R$ "
-      suffix=""
-      type="text"
-      value={45}
-    />
-    <NumberFormat
-      allowNegative={true}
-      className="Book__valueContainer__price"
-      decimalPrecision={2}
-      decimalSeparator=","
-      displayType="text"
-      isAllowed={[Function]}
-      onChange={[Function]}
-      onKeyDown={[Function]}
-      onMouseUp={[Function]}
-      prefix="R$ "
-      suffix=""
-      type="text"
-      value={40}
-    />
-  </section>
-  <section
-    className="Book__actions"
-  >
-    <div
-      className="Book__actions__quantityContainer"
+        <div>
+          <img
+            alt=""
+            className="Book__figureContainer__img"
+            src="http://books.google.com/books/content?id=nggnmAEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+          />
+          <figcaption
+            className="Book__figureContainer__caption"
+          >
+            <h5
+              className="Book__figureContainer__caption__name"
+            >
+               
+              The Linux Command Line
+            </h5>
+            <p
+              className="Book__figureContainer__caption__description"
+            >
+               
+              You've experienced the shiny, point-and-click surface of your Linux computer—now dive below and explore its depths with the power of the command line. The Linux Command Line takes you from your very first terminal keystrokes to writing full programs in Bash, the most popular Linux shell. Along the way you'll learn the timeless skills handed down by generations of gray-bearded, mouse-shunning gurus: file navigation, environment configuration, command chaining, pattern matching with regular expressions, and more. In addition to that practical knowledge, author William Shotts reveals the philosophy behind these tools and the rich heritage that your desktop Linux machine has inherited from Unix supercomputers of yore. As you make your way through the book's short, easily-digestible chapters, you'll learn how to: * Create and delete files, directories, and symlinks * Administer your system, including networking, package installation, and process management * Use standard input and output, redirection, and pipelines * Edit files with Vi, the world’s most popular text editor * Write shell scripts to automate common or boring tasks * Slice and dice text files with cut, paste, grep, patch, and sed Once you overcome your initial "shell shock," you'll find that the command line is a natural and expressive way to communicate with your computer. Just don't be surprised if your mouse starts to gather dust. A featured resource in the Linux Foundation's "Evolution of a SysAdmin"
+            </p>
+          </figcaption>
+        </div>
+      </BookInfo>
+    </figure>
+    <section
+      className="Book__valueContainer"
     >
+      <NumberFormat
+        allowNegative={true}
+        className="Book__valueContainer__discount"
+        decimalPrecision={2}
+        decimalSeparator=","
+        displayType="text"
+        isAllowed={[Function]}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        onMouseUp={[Function]}
+        prefix="R$ "
+        suffix=""
+        type="text"
+        value={45}
+      >
+        <span
+          className="Book__valueContainer__discount"
+        >
+          R$ 45,00
+        </span>
+      </NumberFormat>
+      <NumberFormat
+        allowNegative={true}
+        className="Book__valueContainer__price"
+        decimalPrecision={2}
+        decimalSeparator=","
+        displayType="text"
+        isAllowed={[Function]}
+        onChange={[Function]}
+        onKeyDown={[Function]}
+        onMouseUp={[Function]}
+        prefix="R$ "
+        suffix=""
+        type="text"
+        value={40}
+      >
+        <span
+          className="Book__valueContainer__price"
+        >
+          R$ 40,00
+        </span>
+      </NumberFormat>
+    </section>
+    <section
+      className="Book__actions"
+    >
+      <QuantityButtons
+        onAddOrRemove={[Function]}
+      >
+        <div
+          className="Book__actions__quantityContainer"
+        >
+          <button
+            className="Book__actions__quantityContainer__minus"
+            onClick={[Function]}
+          >
+            <i
+              className="material-icons"
+            >
+              remove
+            </i>
+          </button>
+          <span
+            className="Book__actions__quantityContainer__quantity"
+          >
+             
+            1
+             
+          </span>
+          <button
+            className="Book__actions__quantityContainer__plus "
+            onClick={[Function]}
+          >
+            <i
+              className="material-icons"
+            >
+              add
+            </i>
+          </button>
+        </div>
+      </QuantityButtons>
       <button
-        className="Book__actions__quantityContainer__minus"
+        className="Book__actions__addToCart"
         onClick={[Function]}
       >
-         -
+        Adicionar ao Carrinho
       </button>
-      <span
-        className="Book__actions__quantityContainer__quantity"
-      >
-         
-        1
-         
-      </span>
-      <button
-        className="Book__actions__quantityContainer__plus "
-        onClick={[Function]}
-      >
-         +
-      </button>
-    </div>
-    <button
-      className="Book__actions__addToCart"
-      onClick={[Function]}
-    >
-      Adicionar ao Carrinho
-    </button>
-  </section>
-</div>
+    </section>
+  </div>
+</Book>
 `;

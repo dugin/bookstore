@@ -17,11 +17,7 @@ describe('App', () => {
         expect(app.find('Connect(withRouter(Header))').exists()).toBe(true);
     });
 
-    it('contains `BooksDisplay`', () => {
-        expect(shallow(<BooksDisplay/>).exists()).toBe(true);
-    });
-
     it('contains `Footer`', () => {
-        expect(shallow(<Footer/>).exists()).toBe(true);
+        expect(app.find(Footer).exists()).toBe(true);
     });
 })

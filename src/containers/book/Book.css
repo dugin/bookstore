@@ -70,13 +70,17 @@
       .Book__actions__quantityContainer__quantity {
         margin: 0 10px; }
       .Book__actions__quantityContainer__minus, .Book__actions__quantityContainer__plus {
-        font-size: 12px;
+        display: flex;
+        align-items: center;
         padding: 4px 5px;
         background-color: white;
         border: 1px solid #939393;
         border-radius: 5px;
         width: 30px;
         color: #939393; }
+        .Book__actions__quantityContainer__minus .material-icons, .Book__actions__quantityContainer__plus .material-icons {
+          font-size: 18px;
+          position: relative; }
         .Book__actions__quantityContainer__minus:hover, .Book__actions__quantityContainer__plus:hover {
           border: 1px solid #c33fa3;
           color: #c33fa3; }

@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`QuantityButtons renders properly 1`] = `
+<div
+  className="Book__actions__quantityContainer"
+>
+  <button
+    className="Book__actions__quantityContainer__minus"
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      remove
+    </i>
+  </button>
+  <span
+    className="Book__actions__quantityContainer__quantity"
+  >
+     
+    1
+     
+  </span>
+  <button
+    className="Book__actions__quantityContainer__plus "
+    onClick={[Function]}
+  >
+    <i
+      className="material-icons"
+    >
+      add
+    </i>
+  </button>
+</div>
+`;
