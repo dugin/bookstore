@@ -28,7 +28,7 @@ export class Header extends Component {
     };
 
     setPrice = () => {
-        return utils.setPriceSum(this.props.books);
+        return utils.setDiscountedPriceSum(this.props.books);
     };
 
     render() {
@@ -70,4 +70,7 @@ export class Header extends Component {
     }
 }
 
-export default connect((state, props) =>({ books: state.books}), null)(withRouter(Header));
+export const mapStateToProps = (state, props) =>({ books: state.books});
+
+
+export default connect( mapStateToProps, null)(withRouter(Header));

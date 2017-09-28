@@ -22,11 +22,11 @@ describe('cartReducer', () => {
         const cart = {books: [{book: {id: 1}, amount: 1}]};
 
         expect(cartReducer(cart, {type: constants.ADD_TO_CART, book: {id: 1}, amount: 1}))
-            .toEqual({books:util.increaseBookAmount({amount: 1, book: {id: 1} }, cart.books)})
+            .toEqual({books: util.increaseBookAmount({amount: 1, book: {id: 1}}, cart.books)})
     });
 
     it('remove a book from the cart', () => {
-        const cart = {books: [{id: 0}]};
+        const cart = {books: [{book: {id: 0}}]};
 
         expect(cartReducer(cart, {type: constants.REMOVE_FROM_CART, id: 0})).toEqual(initialState)
     });

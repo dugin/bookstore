@@ -4,7 +4,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 370px;
+  min-height: 410px;
   border: 1px solid $color__lineCard--gray;
   margin-top: -1px;
   background-color: $color--white;
@@ -17,7 +17,7 @@
     margin-top: 15px;
     text-align: center;
     border-bottom: 1px solid $color__line--gray;
-    min-height: 250px;
+    min-height: 290px;
 
     &__discountTag {
       border-radius: 50%;
@@ -41,6 +41,13 @@
       &__name {
         margin-top: 10px;
         font-size: 15px;
+        margin-bottom: 5px;
+      }
+      &__subtitle {
+
+        font-size: 13px;
+        margin-top: 0;
+        color: darken($color__text--gray, 15);
       }
 
       &__description {
@@ -100,6 +107,8 @@
 
       &__quantity {
         margin: 0 10px;
+        min-width: 18px;
+        text-align: center;
       }
 
       &__minus, &__plus {

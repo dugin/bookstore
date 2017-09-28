@@ -12,13 +12,14 @@
     .Header__block__back-arrow {
       position: relative;
       left: -20px;
+      margin-top: 5px;
       font-size: 48px;
       color: #3fc35f; }
       @media (min-width: 768px) {
         .Header__block__back-arrow {
           position: absolute;
           left: 0;
-          top: 5px; } }
+          top: 0; } }
   .Header__title {
     color: #3fc35f;
     position: relative; }

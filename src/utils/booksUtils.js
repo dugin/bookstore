@@ -16,6 +16,14 @@ export const setPriceSum = (books) => {
     return books.reduce((acc, b) => acc + (b.amount * b.book.price), 0);
 };
 
+export const setDiscountedPriceSum = (books) => {
+    return books.reduce((acc, b) => acc + (b.amount * setPrice(b.book.discount, b.book.price)), 0);
+};
+
+export const setDiscountSum = (books) => {
+    return books.reduce((acc, b) => acc + (b.book.discount ? (b.amount * b.book.discount) : 0), 0);
+};
+
 export const setPrice = (discount, price) => {
     return discount ? price - discount : price;
 };

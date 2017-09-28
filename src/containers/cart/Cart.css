@@ -1,2 +1,43 @@
 .Cart {
-  background-color: #fff; }
+  min-height: calc(100vh - 140px);
+  margin-top: 20px;
+  position: relative; }
+  @media (min-width: 768px) {
+    .Cart .col-md-3 {
+      flex: 0 0 30%;
+      max-width: 30%; } }
+  .Cart__empty {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-size: 20px; }
+    @media (min-width: 768px) {
+      .Cart__empty {
+        font-size: 28px; } }
+    .Cart__empty .material-icons {
+      font-size: 100px;
+      color: #000; }
+  .Cart__summary {
+    padding-top: 10px;
+    border: 1px solid #d1d1d1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 14px;
+    margin-top: -1px;
+    max-height: 200px; }
+    .Cart__summary__price, .Cart__summary__discount, .Cart__summary__total {
+      margin-bottom: 15px; }
+    .Cart__summary__price__title, .Cart__summary__total__title {
+      font-weight: bold; }
+    .Cart__summary__discount__title, .Cart__summary__discount__value {
+      color: #939393; }
+    .Cart__summary__total {
+      font-size: 22px; }
+    .Cart__summary__discount__value {
+      text-decoration: line-through; }
+    .Cart__summary__price__value, .Cart__summary__discount__value, .Cart__summary__total__value {
+      text-align: end; }

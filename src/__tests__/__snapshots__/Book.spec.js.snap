@@ -46,7 +46,9 @@ exports[`Book renders properly 1`] = `
           }
         }
       >
-        <div>
+        <div
+          className="Book__wrapper"
+        >
           <img
             alt=""
             className="Book__figureContainer__img"
@@ -61,6 +63,9 @@ exports[`Book renders properly 1`] = `
                
               The Linux Command Line
             </h5>
+            <p
+              className="Book__figureContainer__caption__subtitle"
+            />
             <p
               className="Book__figureContainer__caption__description"
             >

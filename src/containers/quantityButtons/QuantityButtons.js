@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 
 
 class QuantityButtons extends Component {
@@ -6,18 +7,15 @@ class QuantityButtons extends Component {
     constructor(props) {
         super(props);
 
-        this.state = {quantity: 1};
+        this.state = {quantity: props.amount || 1};
     }
 
     onAdd = () => {
-        this.setState(state => state.quantity++);
-        this.props.onAddOrRemove(this.state.quantity)
+        this.setState(state => state.quantity++, () => this.props.onAddOrRemove(this.state.quantity));
     };
 
     onRemove = () => {
-        this.setState(state => state.quantity > 1 ? state.quantity-- : 1);
-
-        this.props.onAddOrRemove(this.state.quantity)
+        this.setState(state => state.quantity > 1 ? state.quantity-- : 1, () => this.props.onAddOrRemove(this.state.quantity));
     };
 
     render() {
@@ -36,5 +34,10 @@ class QuantityButtons extends Component {
         )
     }
 }
+
+QuantityButtons.propTypes = {
+    amount: PropTypes.number,
+    onAddOrRemove: PropTypes.func.isRequired
+};
 
 export default QuantityButtons;

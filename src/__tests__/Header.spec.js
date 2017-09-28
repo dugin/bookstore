@@ -28,9 +28,14 @@ describe('Header', () => {
         expect(price.exists()).toBe(true);
         expect(amount.exists()).toBe(true);
 
-        expect(header.instance().setPrice()).toEqual(90);
+        expect(header.instance().setPrice()).toEqual(80);
         expect(header.instance().setAmount()).toEqual(2);
 
+    });
+
+    it('mapStateToProps properly', () => {
+
+        expect(mapStateToProps(props, null)).toEqual({book: header.instance().props.book});
     });
 
     describe('arrow left icon', () => {

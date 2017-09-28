@@ -77,6 +77,9 @@ describe('Book', () => {
         });
     });
 
+    it('mapStateToProps properly', () => {
+            expect(mapStateToProps(null, props)).toEqual({book: book.instance().props.book});
+    });
 
     it('mapDispatchToProps properly', () => {
         expect(JSON.stringify(mapDispatchToProps(jest.fn()))).toEqual(JSON.stringify({addToCart: jest.fn()}))

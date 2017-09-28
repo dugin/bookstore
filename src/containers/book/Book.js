@@ -7,6 +7,7 @@ import QuantityButtons from "../quantityButtons/QuantityButtons";
 import BookInfo from "../../components/bookInfo/BookInfo";
 import {Link} from 'react-router-dom';
 import * as utils from '../../utils/booksUtils'
+import PropTypes from 'prop-types';
 
 export class Book extends Component {
     constructor(props) {
@@ -90,4 +91,10 @@ export const mapDispatchToProps = (dispatch) => {
     }
 };
 
-export default connect((state, props) => ({book: props.book}), mapDispatchToProps)(Book);
+export const mapStateToProps = (state, props) => ({book: props.book});
+
+Book.PropTypes = {
+    book: PropTypes.object.isRequired
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Book);

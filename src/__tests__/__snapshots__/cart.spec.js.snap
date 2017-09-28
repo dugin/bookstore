@@ -2,6 +2,21 @@
 
 exports[`Cart Page renders properly 1`] = `
 <div
-  className="Cart"
-/>
+  className="Cart container"
+>
+  <section
+    className="Cart__empty"
+  >
+    <i
+      className="material-icons"
+    >
+      shopping_cart
+    </i>
+    <p
+      className="Cart__empty__message"
+    >
+      Seu carrinho está vazio.
+    </p>
+  </section>
+</div>
 `;

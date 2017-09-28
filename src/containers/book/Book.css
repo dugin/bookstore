@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 370px;
+  min-height: 410px;
   border: 1px solid #d1d1d1;
   margin-top: -1px;
   background-color: #fff; }
@@ -12,7 +12,7 @@
     margin-top: 15px;
     text-align: center;
     border-bottom: 1px solid #e8e8e8;
-    min-height: 250px; }
+    min-height: 290px; }
     .Book__figureContainer__discountTag {
       border-radius: 50%;
       border: 2px solid #000;
@@ -28,7 +28,12 @@
       height: 120px; }
     .Book__figureContainer__caption__name {
       margin-top: 10px;
-      font-size: 15px; }
+      font-size: 15px;
+      margin-bottom: 5px; }
+    .Book__figureContainer__caption__subtitle {
+      font-size: 13px;
+      margin-top: 0;
+      color: #6d6d6d; }
     .Book__figureContainer__caption__description {
       font-size: 11px;
       color: #939393;
@@ -68,7 +73,9 @@
       justify-content: center;
       align-items: center; }
       .Book__actions__quantityContainer__quantity {
-        margin: 0 10px; }
+        margin: 0 10px;
+        min-width: 18px;
+        text-align: center; }
       .Book__actions__quantityContainer__minus, .Book__actions__quantityContainer__plus {
         display: flex;
         align-items: center;

@@ -1,0 +1,54 @@
+.CartBook__item {
+  border: 1px solid #d1d1d1;
+  margin-top: -1px;
+  background-color: #fff;
+  display: flex;
+  position: relative;
+  align-items: center; }
+  .CartBook__item__price {
+    font-size: 13px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    padding-left: 0 !important;
+    padding-right: 5px !important;
+    align-items: flex-end; }
+    @media (min-width: 768px) {
+      .CartBook__item__price {
+        margin-top: 20px;
+        margin-left: -15%;
+        font-size: 16px; } }
+    .CartBook__item__price__amount, .CartBook__item__price__unit {
+      font-size: 11px;
+      color: #939393; }
+  .CartBook__item__remove {
+    margin-top: 20px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; }
+    @media (max-width: 767px) {
+      .CartBook__item__remove {
+        bottom: 10px;
+        right: 5px;
+        position: absolute !important; } }
+    .CartBook__item__remove .material-icons {
+      font-size: 22px;
+      margin-right: 3px; }
+  .CartBook__item .Book__actions__quantityContainer {
+    position: absolute;
+    left: 110px;
+    bottom: 10px; }
+  .CartBook__item .Book__wrapper {
+    display: flex;
+    padding: 10px 0; }
+    .CartBook__item .Book__wrapper .Book__figureContainer__img {
+      width: 80px;
+      margin-right: 15px; }
+    .CartBook__item .Book__wrapper .Book__figureContainer__caption__name {
+      margin-top: 0;
+      font-size: 14px; }
+    .CartBook__item .Book__wrapper .Book__figureContainer__caption__subtitle {
+      font-size: 10px; }
+    .CartBook__item .Book__wrapper .Book__figureContainer__caption__description {
+      display: none; }
