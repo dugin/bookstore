@@ -31,6 +31,7 @@
       .CartBook__item__remove {
         bottom: 10px;
         right: 5px;
+        width: 90px !important;
         position: absolute !important; } }
     .CartBook__item__remove .material-icons {
       font-size: 22px;
